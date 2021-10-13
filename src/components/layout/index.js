@@ -1,19 +1,13 @@
 import React from 'react';
 import Grid from '../grid';
 
-const Layout = ({ layout, children }) => {
-  console.log('layout-->', layout);
-
+const Layout = ({ layout, children, component }) => {
   const { rows } = layout;
 
-  rows.map((row) => {
-    row.map((item) => console.log('row item', item));
-  });
-
   return (
-    <div>
-      {rows.map((row) => (
-        <Grid.Row>
+    <Grid.Container>
+      {rows.map((row, i) => (
+        <Grid.Row key={i}>
           {row.map((col) => (
             <Grid.Col size={col.columns} key={col.component}>
               component-- {col.component}
@@ -22,7 +16,7 @@ const Layout = ({ layout, children }) => {
           ))}
         </Grid.Row>
       ))}
-    </div>
+    </Grid.Container>
   );
 };
 

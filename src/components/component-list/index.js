@@ -1,29 +1,32 @@
 import React from 'react';
 import Grid from '../grid';
-import { getComponentsByType } from '../../utils/utils';
+import { getComponentsByType, getComponentsById } from '../../utils/utils';
 import classNames from 'classnames';
 
 const namespace = 'pbt';
 
 const ComponentList = ({ components, children, modifier }) => {
-  let availableComponents = {
-    component: getComponentsByType(components),
+  const availableComponents = {
+    components: getComponentsByType(components),
   };
+
+  console.log('availableComponents-->', availableComponents);
 
   return (
     <div>
       {components.map((component, i) => {
-        const Component = availableComponents[component.type];
+        const Component = 'Header';
+
+        //getComponentsById(component);
 
         return (
-          <Grid.Row
+          <Component
+            component_id={component.id}
+            {...component}
             key={component.id}
-            className={classNames({
-              [`${namespace}__${component.type}`]: modifier,
-            })}
           >
-            <Component component_id={component.id} {...component} />
-          </Grid.Row>
+            pablito
+          </Component>
         );
       })}
     </div>

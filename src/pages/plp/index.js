@@ -11,10 +11,7 @@ const ProductListPage = ({ initialState }) => {
   return (
     <div>
       <Layout layout={availableLayout}>
-        <ComponentList
-          availableComponents={'header'}
-          components={components}
-        ></ComponentList>
+        <ComponentList components={components}></ComponentList>
       </Layout>
     </div>
   );
