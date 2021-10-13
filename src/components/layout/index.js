@@ -1,8 +1,11 @@
 import React from 'react';
 import Grid from '../grid';
+import ComponentList from '../../components/component-list';
 
-const Layout = ({ layout, children, component }) => {
+const Layout = ({ layout, availableComponents, components }) => {
   const { rows } = layout;
+
+  const Component = availableComponents.header;
 
   return (
     <Grid.Container>
@@ -11,7 +14,11 @@ const Layout = ({ layout, children, component }) => {
           {row.map((col) => (
             <Grid.Col size={col.columns} key={col.component}>
               component-- {col.component}
-              {children}
+              <ComponentList
+                availableComponents={availableComponents}
+                components={components}
+                componentId={col.component}
+              />
             </Grid.Col>
           ))}
         </Grid.Row>

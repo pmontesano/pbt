@@ -5,16 +5,8 @@ export const getComponentsByType = (components) =>
     const componentObj = {
       type: componentValue,
       id: component.id,
+      ...component,
     };
 
     return componentObj;
   });
-
-export const getComponentsById = (components, id) => {
-  return components.filter((component) => {
-    if (component.id === id) {
-      console.log('component.type', component.type);
-      return component.type;
-    }
-  });
-};

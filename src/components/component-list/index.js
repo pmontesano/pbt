@@ -1,33 +1,30 @@
 import React from 'react';
 import { getComponentsByType, getComponentsById } from '../../utils/utils';
-import Header from '../header';
-import Banner from '../banner';
-import Hero from '../hero';
-import Menu from '../menu';
-import ProductList from '../productList';
 
 const namespace = 'pbt';
 
-const ComponentList = ({ components, children, modifier }) => {
-  const availableComponents = {
-    components: getComponentsByType(components),
+const ComponentList = ({
+  availableComponents,
+  components,
+  componentId,
+  modifier,
+}) => {
+  const componentsListObj = {
+    componentsList: getComponentsByType(components),
   };
+
+  const { componentsList } = componentsListObj;
 
   return (
     <div>
-      {components.map((component, i) => {
-        const componentType = getComponentsById(
-          availableComponents.components,
-          component.id
-        );
+      {componentsList.map((component, i) => {
+        let Component;
 
-        const Component = (props) => <Header {...props} />;
+        if (component.id === componentId) {
+          Component = availableComponents[component.type];
 
-        return (
-          <Component {...component} key={component.id}>
-            Aca dentro va el componente
-          </Component>
-        );
+          return <Component {...component} key={component.id} />;
+        }
       })}
     </div>
   );
