@@ -1,5 +1,10 @@
 import React from 'react';
 import { getComponentsByType, getComponentsById } from '../../utils/utils';
+import Header from '../header';
+import Banner from '../banner';
+import Hero from '../hero';
+import Menu from '../menu';
+import ProductList from '../productList';
 
 const namespace = 'pbt';
 
@@ -16,9 +21,7 @@ const ComponentList = ({ components, children, modifier }) => {
           component.id
         );
 
-        console.log('componentType', componentType);
-
-        const Component = 'Header';
+        const Component = (props) => <Header {...props} />;
 
         return (
           <Component {...component} key={component.id}>
