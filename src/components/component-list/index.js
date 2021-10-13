@@ -1,7 +1,5 @@
 import React from 'react';
-import Grid from '../grid';
 import { getComponentsByType, getComponentsById } from '../../utils/utils';
-import classNames from 'classnames';
 
 const namespace = 'pbt';
 
@@ -10,22 +8,21 @@ const ComponentList = ({ components, children, modifier }) => {
     components: getComponentsByType(components),
   };
 
-  console.log('availableComponents-->', availableComponents);
-
   return (
     <div>
       {components.map((component, i) => {
+        const componentType = getComponentsById(
+          availableComponents.components,
+          component.id
+        );
+
+        console.log('componentType', componentType);
+
         const Component = 'Header';
 
-        //getComponentsById(component);
-
         return (
-          <Component
-            component_id={component.id}
-            {...component}
-            key={component.id}
-          >
-            pablito
+          <Component {...component} key={component.id}>
+            Aca dentro va el componente
           </Component>
         );
       })}

@@ -10,8 +10,11 @@ export const getComponentsByType = (components) =>
     return componentObj;
   });
 
-export const getComponentsById = (components) => {
-  const component = getComponentsByType(components);
-
-  console.log('component', component);
+export const getComponentsById = (components, id) => {
+  return components.filter((component) => {
+    if (component.id === id) {
+      console.log('component.type', component.type);
+      return component.type;
+    }
+  });
 };
