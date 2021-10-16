@@ -1,32 +1,7 @@
-$grid-col-size: 5;
+$grid-col-size: 12;
 
-.#{$pdp-prefix}-container {
-  &__col {
-    flex-grow: 1;
-    flex-shrink: 1;
-    flex-basis: 0%;
-    box-sizing: border-box;
-    flex-wrap: wrap;
-    width: 100%;
-  }
-
-  @for $i from 1 through $grid-col-size {
-    .col-#{$i} {
-      flex-grow: $i;
-      flex-shrink: 1;
-      flex-basis: 0%;
-    }
-  }
-
-  &__col--text-center {
-    display: flex;
-    align-content: center;
-    justify-content: center;
-  }
-
-  &__col--text-evenly {
-    display: flex;
-    align-content: center;
-    justify-content: space-evenly;
+@for $i from 1 through $grid-col-size {
+  .col-#{$i} {
+    flex: 0 0 100% / $grid-col-size * $i;
   }
 }

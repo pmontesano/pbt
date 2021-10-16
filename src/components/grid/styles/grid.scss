@@ -1,0 +1,8 @@
+@import './_row.scss';
+@import './_col.scss';
+
+[class^='col-'] {
+  background-color: pink;
+  text-align: center;
+  border: solid 1px;
+}

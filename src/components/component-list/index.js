@@ -1,14 +1,9 @@
 import React from 'react';
-import { getComponentsByType, getComponentsById } from '../../utils/utils';
+import { getComponentsByType } from '../../utils/utils';
 
 const namespace = 'pbt';
 
-const ComponentList = ({
-  availableComponents,
-  components,
-  componentId,
-  modifier,
-}) => {
+const ComponentList = ({ availableComponents, components, componentId }) => {
   const componentsListObj = {
     componentsList: getComponentsByType(components),
   };
@@ -17,7 +12,7 @@ const ComponentList = ({
 
   return (
     <div>
-      {componentsList.map((component, i) => {
+      {componentsList.map((component) => {
         let Component;
 
         if (component.id === componentId) {

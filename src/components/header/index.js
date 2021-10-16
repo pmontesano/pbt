@@ -1,11 +1,18 @@
 import React from 'react';
+import Grid from '../grid';
+import Image from '../image';
+import NavBar from '../navBar';
 
-const Header = (props) => {
+const namespace = 'pbt-header';
 
-  console.log('header props', props)
-
+const Header = ({ header: { logo, links } }) => {
   return (
-    <div>Header</div>
+    <div className={namespace}>
+      <h1 className={`${namespace}__logo`}>
+        <Image src={logo.href} alt="pbt-logo" />
+      </h1>
+      <NavBar links={links} />
+    </div>
   );
 };
 

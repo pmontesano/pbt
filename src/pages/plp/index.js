@@ -1,6 +1,5 @@
 import React from 'react';
 import Layout from '../../components/layout';
-import ComponentList from '../../components/component-list';
 import Header from '../../components/header';
 import Banner from '../../components/banner';
 import Hero from '../../components/hero';
@@ -22,13 +21,13 @@ const ProductListPage = ({ initialState }) => {
   };
 
   return (
-    <div>
+    <>
       <Layout
         layout={availableLayout}
         availableComponents={availableComponents}
         components={components}
       ></Layout>
-    </div>
+    </>
   );
 };
 

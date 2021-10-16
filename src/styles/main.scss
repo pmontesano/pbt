@@ -1,15 +1,22 @@
+@import './variables';
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: #e8e8e8;
+  background-color: $body-bg;
   text-align: center;
   font-family: 'Proxima Nova', -apple-system, 'Helvetica Neue', Helvetica,
     Roboto, Arial, sans-serif, sans-serif;
 }
 
-h1 {
-  font-weight: 500;
-}
-
 .container {
   padding-top: 40px;
   margin: auto;
+}
+
+.pbt__col {
+  background-color: pink;
+  border: 1px solid red;
 }

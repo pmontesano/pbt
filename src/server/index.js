@@ -5,10 +5,8 @@ import { fetchData, render } from '../controllers';
 
 const server = express();
 
-server.use(
-  '/static',
-  express.static(path.join(__dirname, '..', '..', 'dist', 'static'))
-);
+server.use('/', express.static(path.join(__dirname, '../../build')));
+server.use('/static', express.static(path.join(__dirname, '../static')));
 
 /**
  * Mount routers

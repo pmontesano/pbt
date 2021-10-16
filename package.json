@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "test:unit": "jest --config jest.setup.js",
     "build:client": "webpack",
-    "build:server": "babel src --out-dir dist",
+    "build:server": "babel src --out-dir build",
     "start:client": "webpack --watch",
     "start:server": "nodemon --exec babel-node src/server/index.js",
     "build": "npm run build:client && npm run build:server",

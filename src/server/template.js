@@ -5,11 +5,11 @@ const root = (component, bundle, initialState, deviceType) =>
         <script>window._PRELOADED_STATE = ${JSON.stringify({
           initialState,
         })}</script>
-        <link rel="stylesheet" type="text/css" href="/static/${bundle}.${deviceType}.css" />
+        <link rel="stylesheet" type="text/css" href="/${bundle}.${deviceType}.css" />
         </head>
         <body>
         <div id="root">${component}</div>
-        <script src="/static/${bundle}.${deviceType}.js"></script>
+        <script src="/${bundle}.${deviceType}.js"></script>
       </body>
       </html>`;
 
