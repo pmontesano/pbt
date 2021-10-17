@@ -1,0 +1,11 @@
+@import '../../styles/variables';
+
+.ui-card {
+  background-color: $white;
+  border-radius: $border-radius-6;
+  width: fit-content;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0.12);
+  margin: $spacing-8;
+  padding: $spacing-16;
+  position: relative;
+}

@@ -1,0 +1,13 @@
+@import './item';
+
+.#{$app-prefix}-item {
+  &__image {
+    max-height: 160px;
+  }
+
+  &__card {
+    &:hover {
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

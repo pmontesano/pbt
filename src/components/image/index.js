@@ -1,7 +1,7 @@
 import React from 'react';
 const classnames = require('classnames');
 
-const namespace = 'pbt-image';
+const namespace = 'ui-image';
 
 const Image = ({ alt, src, src2x, className }) => {
   return (

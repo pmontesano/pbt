@@ -1,9 +1,15 @@
 import React from 'react';
+import Image from '../image';
 
-const Banner = ({ component }) => {
+const Banner = ({ banner: { image, link }, prefix }) => {
+  const namespace = `${prefix}-banner`;
+
+  const { src, alt } = image;
 
   return (
-    <div>Banner</div>
+    <div className={namespace}>
+      <Image className={`${namespace}__image`} src={src} alt={alt} />
+    </div>
   );
 };
 

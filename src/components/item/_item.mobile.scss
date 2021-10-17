@@ -1,0 +1,11 @@
+@import './item';
+
+.#{$app-prefix}-item {
+  &__image {
+    max-height: 120px;
+  }
+
+  &__description {
+    @include line-clamp(4);
+  }
+}

@@ -1,1 +1,10 @@
-@import '../../styles/main';
+@import '../../styles/main.scss';
+@import '../../components/grid/styles/grid.scss';
+@import '../../components/header/header.mobile';
+@import '../../components/navBar/navBar.mobile';
+@import '../../components/hero/hero.mobile';
+@import '../../components/productList/productList.mobile';
+@import '../../components/item/item.mobile';
+@import '../../components/banner/banner.mobile';
+@import '../../components/card/card';
+@import '../../components/menu/menu';

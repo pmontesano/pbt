@@ -1,0 +1,15 @@
+@import '../../styles/variables';
+
+.#{$app-prefix}-banner {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+  margin: $spacing-24 $spacing-8 $spacing-48;
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 0;
+    transform: translateY(-18%);
+  }
+}

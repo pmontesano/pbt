@@ -1,0 +1,12 @@
+@import '../../styles/variables';
+
+.#{$app-prefix}-product-list {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    flex: 1 0 21%;
+    max-width: 300px;
+    margin-bottom: $spacing-24;
+  }
+}

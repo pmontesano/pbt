@@ -1,0 +1,33 @@
+@import '../../styles/variables';
+
+.#{$app-prefix}-item {
+  height: 100%;
+  display: flex;
+  align-self: stretch;
+  text-align: left;
+  &__link {
+    display: block;
+  }
+
+  &__image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  &__image {
+    object-fit: contain;
+  }
+
+  &__title {
+    font-size: $font-size-16;
+    color: $gray-900;
+  }
+
+  &__description {
+    font-size: $font-size-14;
+    color: $gray-550;
+    line-height: 1.3;
+  }
+}

@@ -3,7 +3,12 @@ import { getComponentsByType } from '../../utils/utils';
 
 const namespace = 'pbt';
 
-const ComponentList = ({ availableComponents, components, componentId }) => {
+const ComponentList = ({
+  availableComponents,
+  components,
+  componentId,
+  style,
+}) => {
   const componentsListObj = {
     componentsList: getComponentsByType(components),
   };
@@ -11,17 +16,17 @@ const ComponentList = ({ availableComponents, components, componentId }) => {
   const { componentsList } = componentsListObj;
 
   return (
-    <div>
+    <>
       {componentsList.map((component) => {
         let Component;
 
         if (component.id === componentId) {
           Component = availableComponents[component.type];
 
-          return <Component {...component} key={component.id} />;
+          return <Component {...component} key={component.id} prefix={style} />;
         }
       })}
-    </div>
+    </>
   );
 };
 

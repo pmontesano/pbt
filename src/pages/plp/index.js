@@ -7,7 +7,7 @@ import Menu from '../../components/menu';
 import ProductList from '../../components/productList';
 
 const ProductListPage = ({ initialState }) => {
-  const { components, layout, deviceType } = initialState;
+  const { components, layout, deviceType, styles } = initialState;
 
   const isDesktop = deviceType === 'desktop';
   const availableLayout = isDesktop ? layout.desktop : layout.mobile;
@@ -26,6 +26,7 @@ const ProductListPage = ({ initialState }) => {
         layout={availableLayout}
         availableComponents={availableComponents}
         components={components}
+        style={styles}
       ></Layout>
     </>
   );
