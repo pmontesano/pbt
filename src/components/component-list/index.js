@@ -1,8 +1,6 @@
 import React from 'react';
 import { getComponentsByType } from '../../utils/utils';
 
-const namespace = 'pbt';
-
 const ComponentList = ({
   availableComponents,
   components,
