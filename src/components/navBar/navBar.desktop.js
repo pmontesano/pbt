@@ -2,7 +2,7 @@ import React from 'react';
 const classnames = require('classnames');
 import Icon from '../icon';
 
-const NavBarDesktop = ({ links, className, prefix, onHandleClick }) => {
+const NavBarDesktop = ({ links, className, prefix }) => {
   const namespace = `${prefix}-nav-bar`;
 
   return (
@@ -11,7 +11,7 @@ const NavBarDesktop = ({ links, className, prefix, onHandleClick }) => {
         {links.map((link, i) => {
           return (
             <li key={i} className={`${namespace}__menu-list`}>
-              <a href={link.href} alt={link.text} onclick={onHandleClick}>
+              <a href={link.href} alt={link.text}>
                 {link.icon !== null ? (
                   <Icon
                     className={`${namespace}__menu-icon`}
