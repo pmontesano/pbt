@@ -5,8 +5,6 @@ import Image from '../image';
 const Item = ({ image, title, description, href, prefix }) => {
   const namespace = `${prefix}-item`;
 
-  console.log('image', image);
-
   return (
     <div className={namespace}>
       <Card className={`${namespace}__card`}>

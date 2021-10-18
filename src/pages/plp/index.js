@@ -27,6 +27,7 @@ const ProductListPage = ({ initialState }) => {
         availableComponents={availableComponents}
         components={components}
         style={styles}
+        deviceType={deviceType}
       ></Layout>
     </>
   );

@@ -1,0 +1,16 @@
+@import '../../styles/variables';
+
+$logo-width: 100px;
+
+.#{$app-prefix}-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $white;
+  padding-left: $spacing-16;
+  padding-right: $spacing-16;
+
+  &__logo {
+    max-width: $logo-width;
+  }
+}

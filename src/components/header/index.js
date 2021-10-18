@@ -2,7 +2,7 @@ import React from 'react';
 import Image from '../image';
 import NavBar from '../navBar';
 
-const Header = ({ header: { logo, links }, prefix }) => {
+const Header = ({ header: { logo, links }, prefix, deviceType }) => {
   const namespace = `${prefix}-header`;
 
   return (
@@ -10,7 +10,7 @@ const Header = ({ header: { logo, links }, prefix }) => {
       <h1 className={`${namespace}__logo`}>
         <Image src={logo.href} alt={`${prefix}-logo`} />
       </h1>
-      <NavBar links={links} prefix={prefix} />
+      <NavBar links={links} prefix={prefix} deviceType={deviceType} />
     </div>
   );
 };

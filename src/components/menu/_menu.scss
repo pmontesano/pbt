@@ -1,7 +1,17 @@
 @import '../../styles/variables';
 
+.#{$app-prefix}-menu-container {
+  padding-left: $spacing-48;
+  text-align: left;
+}
+
 .#{$app-prefix}-menu {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  &__title {
+    margin: $spacing-12 0;
+  }
+
+  &__list {
+    align-items: center;
+    line-height: 30px;
+  }
 }

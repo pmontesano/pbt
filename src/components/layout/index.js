@@ -2,7 +2,13 @@ import React from 'react';
 import Grid from '../grid';
 import ComponentList from '../../components/component-list';
 
-const Layout = ({ layout, availableComponents, components, style }) => {
+const Layout = ({
+  layout,
+  availableComponents,
+  components,
+  style,
+  deviceType,
+}) => {
   const { rows } = layout;
 
   return (
@@ -16,6 +22,7 @@ const Layout = ({ layout, availableComponents, components, style }) => {
                 components={components}
                 componentId={col.component}
                 style={style}
+                deviceType={deviceType}
               />
             </Grid.Col>
           ))}

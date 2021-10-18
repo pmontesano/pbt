@@ -1,33 +1,17 @@
 import React from 'react';
-const classnames = require('classnames');
-import Icon from '../icon';
+import NavBarMobile from './navBar.mobile';
+import navBarDesktop from './navBar.desktop';
 
-const NavBar = ({ links, className, prefix }) => {
+const NavBar = ({ links, className, prefix, deviceType }) => {
+  const props = { links, className, prefix, deviceType };
+
+  console.log('deviceType', deviceType);
+
+  const Component = deviceType === 'desktop' ? navBarDesktop : NavBarMobile;
+
   const namespace = `${prefix}-nav-bar`;
 
-  return (
-    <nav className={namespace} role="navigation">
-      <ul className={classnames(`${namespace}__menu`, className)}>
-        {links.map((link, i) => {
-          return (
-            <li key={i} className={`${namespace}__menu-list`}>
-              <a href={link.href} alt={link.text}>
-                {link.icon !== null ? (
-                  <Icon
-                    className={`${namespace}__menu-icon`}
-                    src={link.icon.src}
-                    prefix={prefix}
-                  />
-                ) : (
-                  link.text
-                )}
-              </a>
-            </li>
-          );
-        })}
-      </ul>
-    </nav>
-  );
+  return <Component {...props} />;
 };
 
 export default NavBar;

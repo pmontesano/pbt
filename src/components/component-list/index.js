@@ -8,6 +8,7 @@ const ComponentList = ({
   components,
   componentId,
   style,
+  deviceType,
 }) => {
   const componentsListObj = {
     componentsList: getComponentsByType(components),
@@ -23,7 +24,14 @@ const ComponentList = ({
         if (component.id === componentId) {
           Component = availableComponents[component.type];
 
-          return <Component {...component} key={component.id} prefix={style} />;
+          return (
+            <Component
+              {...component}
+              key={component.id}
+              prefix={style}
+              deviceType={deviceType}
+            />
+          );
         }
       })}
     </>

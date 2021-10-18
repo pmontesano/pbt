@@ -4,6 +4,7 @@
   display: flex;
   flex-wrap: wrap;
   align-items: stretch;
+  padding: 0 $spacing-32;
 
   &__item {
     flex: 1 0 50%;
