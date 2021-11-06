@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context';
 import Card from '../card';
 import Image from '../image';
 
-const Item = ({ image, title, description, href, prefix }) => {
+const Item = ({ image, title, description, href }) => {
+  const contextProps = useContext(AppContext);
+  const { prefix } = contextProps;
   const namespace = `${prefix}-item`;
 
   return (

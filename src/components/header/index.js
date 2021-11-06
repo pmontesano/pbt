@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context';
 import Image from '../image';
 import NavBar from '../navBar';
 
-const Header = ({ header: { logo, links }, prefix, deviceType }) => {
+const Header = ({ header: { logo, links } }) => {
+  const contextProps = useContext(AppContext);
+  const { prefix } = contextProps;
   const namespace = `${prefix}-header`;
 
   return (
@@ -10,7 +13,7 @@ const Header = ({ header: { logo, links }, prefix, deviceType }) => {
       <h1 className={`${namespace}__logo`}>
         <Image src={logo.href} alt={`${prefix}-logo`} />
       </h1>
-      <NavBar links={links} prefix={prefix} deviceType={deviceType} />
+      <NavBar links={links} prefix={prefix} />
     </div>
   );
 };

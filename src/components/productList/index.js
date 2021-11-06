@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context';
 import Item from '../item';
 
-const ProductList = ({ productList: { products }, prefix }) => {
+const ProductList = ({ productList: { products } }) => {
+  const contextProps = useContext(AppContext);
+  const { prefix } = contextProps;
   const namespace = `${prefix}-product-list`;
 
   return (

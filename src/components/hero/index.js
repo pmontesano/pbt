@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context';
 import Image from '../image';
 
-const Hero = ({ hero: { image, link }, prefix }) => {
+const Hero = ({ hero: { image, link } }) => {
+  const contextProps = useContext(AppContext);
+  const { prefix } = contextProps;
   const namespace = `${prefix}-hero`;
 
   const { src, alt } = image;

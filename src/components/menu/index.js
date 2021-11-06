@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AppContext } from '../context';
 const classnames = require('classnames');
 
-const Menu = ({ menu: { title, items }, className, prefix }) => {
+const Menu = ({ menu: { title, items }, className }) => {
+  const contextProps = useContext(AppContext);
+  const { prefix } = contextProps;
   const namespace = `${prefix}-menu`;
+
   return (
     <div className={classnames(`${namespace}-container`, className)}>
       <h2 className={`${namespace}__title`}>{title}</h2>

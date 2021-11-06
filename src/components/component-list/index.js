@@ -1,13 +1,7 @@
 import React from 'react';
 import { getComponentsByType } from '../../utils/utils';
 
-const ComponentList = ({
-  availableComponents,
-  components,
-  componentId,
-  style,
-  deviceType,
-}) => {
+const ComponentList = ({ availableComponents, components, componentId }) => {
   const componentsListObj = {
     componentsList: getComponentsByType(components),
   };
@@ -22,14 +16,7 @@ const ComponentList = ({
         if (component.id === componentId) {
           Component = availableComponents[component.type];
 
-          return (
-            <Component
-              {...component}
-              key={component.id}
-              prefix={style}
-              deviceType={deviceType}
-            />
-          );
+          return <Component {...component} key={component.id} />;
         }
       })}
     </>

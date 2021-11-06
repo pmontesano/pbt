@@ -1,4 +1,5 @@
 import React from 'react';
+import Provider from '../../components/context';
 import Layout from '../../components/layout';
 import Header from '../../components/header';
 import Banner from '../../components/banner';
@@ -12,6 +13,11 @@ const ProductListPage = ({ initialState }) => {
   const isDesktop = deviceType === 'desktop';
   const availableLayout = isDesktop ? layout.desktop : layout.mobile;
 
+  const value = {
+    deviceType,
+    prefix: styles,
+  };
+
   const availableComponents = {
     header: Header,
     banner: Banner,
@@ -22,13 +28,14 @@ const ProductListPage = ({ initialState }) => {
 
   return (
     <>
-      <Layout
-        layout={availableLayout}
-        availableComponents={availableComponents}
-        components={components}
-        style={styles}
-        deviceType={deviceType}
-      ></Layout>
+      <Provider value={value}>
+        <Layout
+          layout={availableLayout}
+          availableComponents={availableComponents}
+          components={components}
+          style={styles}
+        ></Layout>
+      </Provider>
     </>
   );
 };
